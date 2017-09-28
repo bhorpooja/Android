@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e2d1d1"
+    tools:context="com.example.chatapp.MainActivity">
+
+    <ImageView
+        android:id="@+id/imgSend"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/round_shape"
+        android:paddingLeft="17dp"
+        android:paddingTop="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_send_black_24dp" />
+
+    <ImageView
+        android:id="@+id/imgMic"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/round_shape"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_mic_black_24dp" />
+
+    <EditText
+        android:id="@+id/textMsg"
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/round_rect"
+        android:ems="10"
+        android:hint="Type a Message"
+        android:inputType="textPersonName"
+        android:paddingLeft="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSmile"
+        android:layout_width="30dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="12dp"
+        android:background="@drawable/ic_sentiment_satisfied_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textMsg"
+        app:layout_constraintStart_toStartOf="@+id/textMsg" />
+
+    <Button
+        android:id="@+id/btnCam"
+        android:layout_width="31dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/ic_camera_alt_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textMsg"
+        app:layout_constraintEnd_toEndOf="@+id/textMsg" />
+
+
+
+</android.support.constraint.ConstraintLayout>
