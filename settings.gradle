@@ -1,1 +1,1 @@
-include ':app', ':myfirstapplication', ':imagething', ':whatsappscreen', ':chatapp'
+include ':app', ':myfirstapplication', ':imagething', ':whatsappscreen', ':chatapp', ':interactivitycommunication'

@@ -36,7 +36,7 @@
         <ImageView
             android:id="@+id/imgSend"
             android:layout_width="0dp"
-            android:layout_height="39dp"
+            android:layout_height="38dp"
             android:layout_marginTop="2dp"
             android:layout_marginStart="03dp"
             android:layout_weight="0.1"
