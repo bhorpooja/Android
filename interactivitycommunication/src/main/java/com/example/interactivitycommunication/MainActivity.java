@@ -8,22 +8,57 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String KEY_DESC="desc";
+    public static final int REQ_ONE=1234;
+    public static final int REQ_TWO=1235;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.btnOne).setOnClickListener(this::onOne);
-
-        findViewById(R.id.btnTwo).setOnClickListener(this::onTwo);
     }
 
-    private void onOne(View view) {
-        Intent intent=new Intent(this,OneActivity.class);
-        startActivity(intent);
+    public void onOne(View view) {
+        Class cls = OneActivity.class;
+
+        Bundle bundle = new Bundle();
+        bundle.putString(KEY_DESC, " This is one number, which is starting. There is one only.");
+
+        Intent intent = new Intent(this, cls);
+        intent.putExtras(bundle);
+        //startActivity(intent);
+        startActivityForResult(intent, REQ_ONE);
     }
 
-    private void onTwo(View view) {
-        Intent intent=new Intent(this,TwoActivity.class);
-        startActivity(intent);
+    public void onTwo(View view) {
+        Bundle bundle = new Bundle();
+        bundle.putString(KEY_DESC, "This is two number, which is even and represents double things");
+
+        Intent intent = new Intent(this, TwoActivity.class);
+        intent.putExtras(bundle);
+        startActivityForResult(intent, REQ_TWO);
+        //startActivity(intent);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode==REQ_ONE){
+            if (resultCode==RESULT_OK){
+                Bundle bundle=data.getExtras();
+                if (bundle!=null){
+                    ((Button)findViewById(R.id.btnOne)).setText(bundle.getString(OneActivity.RES_ONE));
+                }
+            }
+        }
+        else{
+            if (resultCode==RESULT_OK){
+                Bundle bundle=data.getExtras();
+                if (bundle!=null){
+                    ( (Button)findViewById(R.id.btnTwo)).setText(bundle .getString(TwoActivity.RES_TWO));
+                }
+            }
+
+        }
     }
 }

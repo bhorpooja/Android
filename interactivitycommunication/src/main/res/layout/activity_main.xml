@@ -12,16 +12,17 @@
         android:id="@+id/btnOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="One"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:onClick="onOne"
+        android:text="One" />
 
 
     <Button
         android:id="@+id/btnTwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Two"
         android:layout_below="@+id/btnOne"
         android:layout_centerHorizontal="true"
-        />
+        android:onClick="onTwo"
+        android:text="Two" />
 </RelativeLayout>
