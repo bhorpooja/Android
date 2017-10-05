@@ -14,7 +14,8 @@ import android.widget.TextView;
 
 public class MyView extends android.support.v7.widget.AppCompatTextView {
 
-    public Paint paint;
+    private Paint paint;
+
     public MyView(Context context) {
         super(context);
         paint = new Paint();
@@ -24,9 +25,9 @@ public class MyView extends android.support.v7.widget.AppCompatTextView {
 
     public MyView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-//        paint = new Paint();
-//        paint.setStrokeWidth(5.0f);
-//        paint.setColor(Color.RED);
+        paint = new Paint();
+        paint.setStrokeWidth(5.0f);
+        paint.setColor(Color.RED);
     }
 
     @Override
@@ -34,7 +35,7 @@ public class MyView extends android.support.v7.widget.AppCompatTextView {
         super.onDraw(canvas);
 
         paint.setColor(Color.BLACK);
-        for (int i = 10; i < 500; i += 50) {
+        for (int i = 10; i < 5000; i += 50) {
             canvas.drawLine(10, i, getWidth(), i, paint);
         }
         paint.setColor(Color.RED);
