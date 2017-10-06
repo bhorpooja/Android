@@ -34,13 +34,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode==REQ_ONE){
-                if (data!=null){
-                    Bundle bundle=getIntent().getExtras();
-                   byte[] b=bundle.getByteArray("boy");
-                    Bitmap bitmap= BitmapFactory.decodeByteArray(b,0,b.length);
-
+                if (data!=null)
+                {
+//                    Bundle bundle=getIntent().getExtras();
+//                   byte[] b=bundle.getByteArray("boy");
+//                    Bitmap bitmap= BitmapFactory.decodeByteArray(b,0,b.length);
+//
                     imgShow=findViewById(R.id.imgView);
-                    imgShow.setImageBitmap(bitmap);
+//                    imgShow.setImageBitmap(bitmap);
+                    int draw=data.getIntExtra(DRAW,0);
+                    imgShow.setImageResource(draw);
 
             }
         }

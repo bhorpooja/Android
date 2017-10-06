@@ -28,15 +28,20 @@ public class ImagesActivity extends AppCompatActivity {
 
     public void onImgClick(View view) {
         imgOne=findViewById(R.id.imgOne);
-        Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.ic_boy);
-        ByteArrayOutputStream baos=new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG,100,baos);
-        byte[] b=baos.toByteArray();
-
+//        Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.ic_boy);
+//        ByteArrayOutputStream baos=new ByteArrayOutputStream();
+//        bitmap.compress(Bitmap.CompressFormat.PNG,100,baos);
+//        byte[] b=baos.toByteArray();
+//
+//        Intent intent=new Intent();
+//        intent.putExtra(DRAW,b);
+//        setResult(REQ_ONE,intent);
+//       finish();
         Intent intent=new Intent();
-        intent.putExtra(DRAW,b);
+        int drawable=R.drawable.ic_boy;
+        intent.putExtra(DRAW,drawable) ;
         setResult(REQ_ONE,intent);
-       finish();
+        finish();
 
     }
 }
