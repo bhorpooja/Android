@@ -40,15 +40,15 @@ public class ImagesActivity extends AppCompatActivity {
         finish();
 
     }
-    public void onImgTwo(View view){
-        intent   =new Intent();
-        int drawable=R.drawable.ic_bus;
-//        bundle.putInt(RES_TWO,drawable);
-//        intent.putExtras(bundle);
-        intent.putExtra(RES_TWO,drawable);
-        setResult(REQ_IMG,intent);
-        finish();
-    }
+//    public void onImgTwo(View view){
+//        intent   =new Intent();
+//        int drawable=R.drawable.ic_bus;
+////        bundle.putInt(RES_TWO,drawable);
+////        intent.putExtras(bundle);
+//        intent.putExtra(RES_TWO,drawable);
+//        setResult(REQ_IMG,intent);
+//        finish();
+//    }
 //    public void onImgThree(View view){
 //         intent=new Intent();
 //         drawable=R.drawable.ic_cycle;

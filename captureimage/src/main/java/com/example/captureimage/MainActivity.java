@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
 //                            imgShow.setImageResource(bundle.getInt(ImagesActivity.RES_ONE));
                             imgShow.setImageResource(draw);
 
-                            draw = data.getIntExtra(RES_TWO, 1);
-                            imgShow.setImageResource(draw);
+//                            draw = data.getIntExtra(RES_TWO, 1);
+//                            imgShow.setImageResource(draw);
 //
 //                            draw = data.getIntExtra(RES_THREE, 2);
 //                            imgShow.setImageResource(draw);
