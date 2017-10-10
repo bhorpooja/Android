@@ -18,7 +18,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        normalList();
+//        normalList();
+        advancedList();
+    }
+
+    private void advancedList() {
+        List<CustItem> dataSetCust=new ArrayList<>();
+        dataSetCust.add(new CustItem(R.drawable.ic_boy,"Boy"));
+        dataSetCust.add(new CustItem(R.drawable.ic_bus,"Bus"));
+        dataSetCust.add(new CustItem(R.drawable.ic_cycle,"Cycle"));
+        dataSetCust.add(new CustItem(R.drawable.ic_key,"Key"));
+        MyAdapter myAdapter=new MyAdapter(this,dataSetCust);
+
+        ((ListView)findViewById(R.id.listView)).setAdapter(myAdapter);
     }
 
     public void onAdd(View view){
