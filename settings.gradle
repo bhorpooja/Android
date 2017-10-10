@@ -1,1 +1,1 @@
-include ':app', ':myfirstapplication', ':imagething', ':whatsappscreen', ':chatapp', ':interactivitycommunication', ':animation', ':customviews', ':captureimage', ':compoundview', ':sampleapp', ':compounddemo2', ':listview', ':listviewdemo'
+include ':app', ':myfirstapplication', ':imagething', ':whatsappscreen', ':chatapp', ':interactivitycommunication', ':animation', ':customviews', ':captureimage', ':compoundview', ':sampleapp', ':compounddemo2', ':listview', ':listviewdemo', ':newlistview'
