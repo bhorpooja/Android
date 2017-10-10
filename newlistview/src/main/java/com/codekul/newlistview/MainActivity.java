@@ -18,7 +18,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        normalList();
+        normalList();
+    }
+
+    public void onAdd(View view){
+        dataSet.add(((EditText)findViewById(R.id.edtMbl)).getText().toString());
+        ArrayAdapter<String> adapter=(ArrayAdapter<String>)((ListView)findViewById(R.id.listView)).getAdapter();
+        adapter.notifyDataSetChanged();
+
+    }
+
+    private void normalList() {
 
         dataSet.add("Android");
         dataSet.add("Spring");
@@ -38,17 +48,13 @@ public class MainActivity extends AppCompatActivity {
             ((EditText)findViewById(R.id.edtMbl)).setText(dataSet.get(pos));
         });
 
-       listView.setOnItemLongClickListener((adapterView, view, pos, id) ->{
-               dataSet.remove(pos);
-                arrayAdapter.notifyDataSetChanged();
-                return true;
-       });
+        listView.setOnItemLongClickListener((adapterView, view, pos, id) ->{
+            dataSet.remove(pos);
+            arrayAdapter.notifyDataSetChanged();
+            return true;
+        });
     }
-    public void onAdd(View view){
-        dataSet.add(((EditText)findViewById(R.id.edtMbl)).getText().toString());
-        ArrayAdapter<String> adapter=(ArrayAdapter<String>)((ListView)findViewById(R.id.listView)).getAdapter();
-        adapter.notifyDataSetChanged();
 
-    }
+
 
 }
