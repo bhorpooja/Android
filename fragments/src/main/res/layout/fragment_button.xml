@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.codekul.fragments.ButtonFragment"
+    android:gravity="center">
+
+    <!-- TODO: Update blank fragment layout -->
+    <Button
+        android:id="@+id/btnCycle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Cycle"/>
+    <Button
+        android:id="@+id/btnBus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Bus"/>
+    <Button
+        android:id="@+id/btnBoy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Boy"/>
+
+</LinearLayout>
