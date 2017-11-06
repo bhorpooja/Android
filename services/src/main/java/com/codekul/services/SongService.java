@@ -16,7 +16,8 @@ public class SongService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         mp=MediaPlayer.create(this,R.raw.my);
         mp.start();
-        return START_NOT_STICKY;
+        return START_STICKY;
+        //return START_NOT_STICKY;
     }
 
     @Override
