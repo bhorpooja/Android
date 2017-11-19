@@ -8,6 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import io.reactivex.Observable;
+import io.reactivex.Scheduler;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -23,7 +28,15 @@ public class MainActivity extends AppCompatActivity {
     public void btnOkay(View view){
 //        threadCounter();
 //        handlerCounter();
-        new MyTask().execute(0,10/*params*/);
+//        new MyTask().execute(0,10/*params*/);
+
+        counterObservable()
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnNext(num -> ((TextView) findViewById(R.id.txtCount)).setText(String.valueOf(num)) )
+                .doOnComplete( () -> {} )
+                .subscribe();
+
     }
 
     private void counter(){
@@ -115,6 +128,16 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+    }
+
+    private Observable<String> counterObservable(){
+        return Observable.create(sub->{
+            for (int i=0;i<10;i++){
+                Thread.sleep(500);
+                sub.onNext(String.valueOf(i));
+            }
+            sub.onComplete();
+        });
     }
 
 }
