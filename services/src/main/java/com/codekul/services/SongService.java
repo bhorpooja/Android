@@ -29,7 +29,6 @@ public class SongService extends Service {
     public void onDestroy() {
         mp.stop();
         mp.release();
-
         super.onDestroy();
     }
 }

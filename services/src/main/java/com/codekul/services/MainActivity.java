@@ -18,10 +18,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void onBtnStart(View view){
+    public void onBtnStart(View view)
+    {
         startService(intent);
     }
-    public void onBtnStop(View view){
+    public void onBtnStop(View view)
+    {
         stopService(intent);
 
     }
